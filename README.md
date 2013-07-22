@@ -31,14 +31,14 @@ for full details about the key and token below.
 1. Trello Application Key and User Token
    
    Interacting with the Trello API requires an application key. This can be
-   generated, after logging in, by visiting the link below.
+   generated, after logging in, by visiting the link below:
    
    [https://trello.com/1/appKey/generate](https://trello.com/1/appKey/generate).
 
    A user token must be generated to access any private data. In the URL below,
    replace APPLICATION_KEY with the key generated in the above step. Note that
    the expiration is *never*. See the guide linked above for other intervals
-   (e.g. expiration=1days).
+   (e.g. expiration=1days):
    
    [https://trello.com/1/authorize?key=APPLICATION_KEY&name=trello-to-zulip&expiration=never&response_type=token](https://trello.com/1/authorize?key=APPLICATION_KEY&name=trello-to-zulip&expiration=never&response_type=token)
 
@@ -75,7 +75,7 @@ for full details about the key and token below.
 
    I currently run this during 'working hours' via `cron`. The script attempts
    to be a good citizen by keeping track of the last action date, stored in
-   a file named `.trello-to-zulip-date`, and sending that along in the in the
+   a file named `.trello-to-zulip-date`, and sending that along  in the
    requests for activity.
 
 
@@ -86,12 +86,12 @@ for full details about the key and token below.
 * Skip creating Zulip messages
     * `./trello-to-zulip.py --config=config.json --verbose --no-post`
 * Poll every 5 minutes instead of 1
-    * --sleep interval is in seconds
+    * `--sleep` interval is in seconds
     * `./trello-to-zulip.py --config=config.json --verbose --sleep=300`
 * Quick test for posting to a different stream
     * Environment variables take precedence over the config file
     * `ZULIP_STREAM=my-other-stream ./trello-to-zulip.py --config=config.json --verbose --once`
-* Getting _all_ Trello history into Zulip
-    * _Warning: If you have significant Trello activity, this may take a while_
-    * `./trello-to-zulip.py --config=config.json --verbose --all --once`
+* Getting all Trello history into Zulip
+    * _Note: If you have significant Trello activity, this may take a while_
+    * `./trello-to-zulip.py --config=config.json --verbose --all`
 
