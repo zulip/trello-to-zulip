@@ -4,6 +4,6 @@
     "TRELLO_ORG"    : "<ORGANIZATION>",
 
     "ZULIP_EMAIL"   : "<BOT EMAIL>",
-    "ZULIP_PASS"    : "<BOT PASSWORD>",
+    "ZULIP_KEY"     : "<BOT API KEY>",
     "ZULIP_STREAM"  : "trello"
 }

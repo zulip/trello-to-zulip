@@ -49,7 +49,7 @@ class Config(object):
             secondary = primary
             primary = json.loads(ARGS.config.read())
             ARGS.config.close()
-        settings = ['TRELLO_KEY', 'TRELLO_TOKEN', 'TRELLO_ORG', 'ZULIP_EMAIL', 'ZULIP_PASS', 'ZULIP_STREAM']
+        settings = ['TRELLO_KEY', 'TRELLO_TOKEN', 'TRELLO_ORG', 'ZULIP_EMAIL', 'ZULIP_KEY', 'ZULIP_STREAM']
         for s in settings:
             if s in primary:
                 self.params[s] = primary[s]
@@ -69,8 +69,8 @@ class Config(object):
         return self.params['TRELLO_ORG']
     def zulip_email(self):
         return self.params['ZULIP_EMAIL']
-    def zulip_pass(self):
-        return self.params['ZULIP_PASS']
+    def zulip_key(self):
+        return self.params['ZULIP_KEY']
     def zulip_stream(self):
         return self.params['ZULIP_STREAM']
     #
@@ -79,7 +79,7 @@ class Config(object):
     def trello_url(self):
         return 'https://api.trello.com/1/organization/%s' % (self.trello_org(),)
     def zulip_auth(self):
-        return (self.zulip_email(), self.zulip_pass())
+        return (self.zulip_email(), self.zulip_key())
 
 
 CONFIG = Config()
