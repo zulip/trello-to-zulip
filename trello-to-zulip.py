@@ -19,7 +19,7 @@ parser.add_argument('-a', '--all',      action='store_true',                help
 parser.add_argument('-n', '--no-post',  action='store_true',                help='do not post messages')
 parser.add_argument('-o', '--once',     action='store_true',                help='read actions once and exit')
 parser.add_argument('-v', '--verbose',  action='store_true',                help='verbose progress output')
-parser.add_argument('-c', '--config',   metavar='C', type=FileType('r'),    help='file to load settings from instead of ENV') 
+parser.add_argument('-c', '--config',   metavar='C', type=FileType('r'),    help='file to load settings (ENV takes priority)') 
 parser.add_argument('-s', '--sleep',    metavar='S', type=int, default=60,  help='seconds to sleep between reading (default: 60)')
 parser.add_argument('file',             type=FileType('r'), nargs='*',      help='read from file(s) instead of Trello')
 
@@ -46,8 +46,7 @@ class Config(object):
         primary = os.environ
         secondary = {}
         if ARGS.config:
-            secondary = primary
-            primary = json.loads(ARGS.config.read())
+            secondary = json.loads(ARGS.config.read())
             ARGS.config.close()
         settings = ['TRELLO_KEY', 'TRELLO_TOKEN', 'TRELLO_ORG', 'ZULIP_EMAIL', 'ZULIP_KEY', 'ZULIP_STREAM']
         for s in settings:
