@@ -1,0 +1,9 @@
+{
+    "TRELLO_KEY"    : "<KEY>",
+    "TRELLO_TOKEN"  : "<TOKEN>",
+    "TRELLO_ORG"    : "<ORGANIZATION>",
+
+    "ZULIP_EMAIL"   : "<BOT EMAIL>",
+    "ZULIP_PASS"    : "<BOT PASSWORD>",
+    "ZULIP_STREAM"  : "trello"
+}
