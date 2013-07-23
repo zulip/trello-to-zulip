@@ -182,7 +182,7 @@ class ActionPrinter(object):
             a.board_name()
         )
     def createCard(self, a):
-        return '%s created' % (
+        return 'Created by %s' % (
             a.creator_name(),
         )
     def createList(self, a):
