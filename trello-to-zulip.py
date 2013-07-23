@@ -266,9 +266,12 @@ class ActionPrinter(object):
             return None
         return self._unknown_action(a)
     def updateCheckItemStateOnCard(self, a):
-        return '%s checked \n>%s\n\n' % (
+        check_item = a.data()['checkItem']
+        state_msg = (check_item['state'] == 'complete') and 'checked' or 'unchecked'
+        return '%s %s \n>%s\n\n' % (
             a.creator_name(),
-            a.data()['checkItem']['name']
+            state_msg,
+            check_item['name']
         )
 
 
