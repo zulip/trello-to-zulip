@@ -17,6 +17,7 @@ with full details on creating them in the next section.
     - Trello user token
 - TRELLO_ORG
     - Trello organization name
+    (use the Orgname from your URLs, e.g. "acmeco" and not "Acme Co.")
 - ZULIP_EMAIL
     - Zulip bot email
 - ZULIP_KEY
