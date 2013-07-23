@@ -211,6 +211,10 @@ class ActionPrinter(object):
             a.card_url(),
             a.data()['text'].replace('\n', '\n>')
         )
+    def moveCardToBoard(self, a):
+        # Any card move is also going to trigger a moveCardFromBoard
+        # event, which will report what we want.
+        pass
     def moveCardFromBoard(self, a):
         return '%s moved card [%s](%s) from **%s** to **%s**' % (
             a.creator_name(),
