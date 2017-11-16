@@ -1,7 +1,7 @@
 # trello-to-zulip.py
 
-A simple scrip for mirroring [Trello](https://trello.com) organization
-activity [Zulip](https://zulip.com) stream.
+A simple script for mirroring [Trello](https://trello.com) organization
+activity to a [Zulip](https://zulip.com) stream.
 
 
 ## Configuration Parameters
